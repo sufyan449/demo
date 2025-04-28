@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Login Form</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		body{
+			background: url('https://freerangestock.com/sample/162000/busy-city-street-with-cars-and-tall-buildings.jpg');
+			height: 100vh;
+			background-size: cover;
+			background-position: center;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.main{
+			width: 300px;
+			background: rgba(0, 0, 0, 0.5);
+			border-radius: 20px;
+			box-shadow: 0px 0px 5px 1px white ;
+			position:relative;
+			height: 400px;
+			overflow: hidden;
+		}
+		.main form{
+			width: 100%;
+			padding: 60px 30px;
+			position:absolute;
+			top: 0;
+			transition: 0.5s;
+		}
+		.main form input{
+			width: 100%;
+			padding: 10px 5px;
+			background: transparent;
+			border:none;
+			outline: none;
+			border-bottom: 1px solid white;
+			margin: 10px 0;
+			color: white;
+		}
+		.btns{
+			display: flex;
+			justify-content: center;
+			gap: 10px;
+		}
+		.btns button{
+			padding:10px 30px;
+			padding: 10px 30px;
+			border-radius: 15px;
+			border:none;
+			background: linear-gradient(45deg, red, yellow);
+			color: white;
+			font-weight: bold;
+			font-size: 10px;
+		}
+		.form1{
+			left: 0;
+		}
+		.form2, .form3{
+			left: 100%;
+		}
+		
+	</style>
+
+</head>
+<body>
+	<div class="main">
+		<form class="form1">
+			<h1>Create Account</h1>
+			<input type="email" name="" placeholder="Email">
+			<input type="password" name="" placeholder="Password">
+			<input type="password" name="" placeholder="Confirm Password">
+			<div class="btns">
+			<button type="button" onclick="nextToForm2()">Next</button>
+		</div>
+		</form>
+	<form class="form2">
+			<h1>Personal Details</h1>
+			<input type="text" name="" placeholder="First Name">
+			<input type="text" name="" placeholder="Last Name">
+			<input type="number" name="" placeholder="Phone Number">
+			<div class="btns">
+			<button type ="button" onclick="prevToForm1()">Prev</button>
+			<button type="button" onclick="nextToForm3()">Next</button>
+		</div>
+		</form>
+	
+	<form class="form3">
+			<h1>Social Links</h1>
+			<input type="text" name="" placeholder="Youtube Profile">
+			<input type="text" name="" placeholder="Facebook Profile">
+			<input type="text" name="" placeholder="LinkedIn Profile">
+			<div class="btns">
+				<button title="button" onclick ="prevToForm2()">Prev</button> 
+			<button title="button">Submit</button>
+		</div>
+		</form>
+	</div>
+</body>
+<script type="text/javascript">
+	const forms = document.querySelectorAll('form');
+	const nextToForm2 =()=>{
+		forms[0].style.left ='-100%';
+		forms[1].style.left ='0';
+	}
+	const prevToForm1 =()=>{
+		forms[0].style.left ='0';
+		forms[1].style.left ='100%';
+	}
+	const nextToForm3 =()=>{
+		forms[2].style.left ='0';
+		forms[1].style.left ='-100%';
+	}
+	const prevToForm2 =()=>{
+		forms[2].style.left ='100%';
+		forms[1].style.left ='0';
+	}
+</script>
+</html>
